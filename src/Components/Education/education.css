@@ -1,0 +1,63 @@
+.education-cards {
+  padding: 60px 20px;
+  background-color: #0e1628;
+  color: white;
+}
+
+.education-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.education-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.education-card {
+  background-color: #1a1f2e;
+  border-radius: 16px;
+  width: 300px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.education-card:hover {
+  transform: translateY(-10px) scale(1.04);
+}
+
+.education-header {
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.education-icon {
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+.education-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.education-date {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.education-body ul {
+  text-align: left;
+  margin-top: 10px;
+  padding-left: 20px;
+}

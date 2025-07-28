@@ -1,0 +1,115 @@
+/* navbar.css */
+
+.devfolio-navbar {
+    width: 100%;
+    background-color: #fff;   /* White background */
+    color: #111;              /* Black text */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+  
+  .devfolio-navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    flex-wrap: wrap;
+  }
+  
+  .devfolio-logo a {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #111; /* Black logo text */
+  }
+  
+  .devfolio-logo img {
+    height: 200px;           /* Adjust logo size for navbar */
+    margin-right: 10px;
+    max-width: 460px;
+    object-fit: contain;
+  }
+  
+  .devfolio-nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .devfolio-nav-links li a {
+    color: #111;            /* Black nav links */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .devfolio-nav-links li a:hover {
+    color: #61dafb;
+  }
+  
+  /* Hamburger styles */
+  .devfolio-hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+  }
+  
+  .devfolio-hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #111; /* Black hamburger */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .devfolio-navbar-container {
+      flex-direction: row;
+      padding: 10px 12px;
+    }
+  
+    .devfolio-logo img {
+      height: 60px;
+      max-width: 160px;
+    }
+  
+    .devfolio-hamburger {
+      display: flex;
+      margin-left: 16px;
+    }
+  
+    .devfolio-nav-links {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100vw;
+      flex-direction: column;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      max-height: 0;
+      overflow: hidden;
+      padding-left: 0;
+      transition: max-height 0.3s;
+      z-index: 999;
+    }
+  
+    .devfolio-nav-links.open {
+      max-height: 500px;
+      padding: 10px 0;
+    }
+  
+    .devfolio-nav-links li {
+      padding: 10px 20px;
+      text-align: center;
+      width: 100%;
+    }
+  }

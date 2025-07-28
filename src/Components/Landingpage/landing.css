@@ -1,0 +1,119 @@
+.landing-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  background-color: #fff;    /* Changed to white */
+  color: #111;              /* Changed to black */
+  flex-wrap: wrap;
+  transition: background-color 0.4s ease;
+}
+
+.landing-section:hover {
+  background-color: #f5f5f5; /* Subtle hover for white bg */
+}
+
+.landing-content {
+  flex: 1;
+  opacity: 0.85;
+  transition: all 0.4s ease;
+  color: #111;              /* Ensure text is black */
+}
+
+.landing-content h1 {
+  color: #111;              /* Ensure heading is black */
+}
+
+.landing-content p {
+  color: #444;              /* Slightly lighter for paragraph */
+}
+
+/* Buttons */
+.landing-buttons {
+  margin: 20px 0;
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 22px;
+  background-color: #24268d;
+  color: #0f1624;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #21a1f1;
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #61dafb;
+  color: #61dafb;
+}
+
+.btn-outline:hover {
+  background-color: #61dafb;
+  color: #0f1624;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 1.5rem;
+}
+
+.social-icons a {
+  color: #111;              /* Black icons */
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #61dafb;
+}
+
+/* Image */
+.landing-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.4s ease;
+}
+
+.landing-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.landing-section:hover .landing-image {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .landing-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .landing-content,
+  .landing-image {
+    flex: unset;
+    margin-top: 20px;
+  }
+
+  .landing-buttons {
+    justify-content: center;
+  }
+
+  .landing-image img {
+    width: 80%;
+  }
+}
