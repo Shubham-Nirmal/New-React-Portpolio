@@ -10,6 +10,8 @@ import Contact from './Components/Contact/contact.jsx'
 import About from './Components/About/about.jsx'
 import Education from '../src/Components/Education/education.jsx'
 import Project from '../src/Components/Project/project.jsx'
+import Footer from './Components/Footer/footer.jsx'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Navbar />
@@ -20,5 +22,6 @@ createRoot(document.getElementById('root')).render(
     <Experiences />
     <Project />
     <Contact />
+    <Footer />
   </StrictMode>,
 )
