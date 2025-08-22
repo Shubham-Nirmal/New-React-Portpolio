@@ -1,5 +1,5 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import "./index.css"
 
 
 import Landing from "../src/Components/Landingpage/landing.jsx"
@@ -13,8 +13,8 @@ import Project from '../src/Components/Project/project.jsx'
 import Footer from './Components/Footer/footer.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Navbar />
+  <>
+    <Navbar className="mb-20" />
     <Landing />
     <Skills />
     <About />
@@ -23,5 +23,5 @@ createRoot(document.getElementById('root')).render(
     <Project />
     <Contact />
     <Footer />
-  </StrictMode>,
+  </>,
 )
