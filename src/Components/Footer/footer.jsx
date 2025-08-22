@@ -1,6 +1,7 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import profileImg from "../../assets/Namelogo.png";
+import mern from "../../assets/mern.pdf";
 import "./footer.css";
 
 const Footer = () => (
@@ -14,10 +15,10 @@ const Footer = () => (
       <div className="footer-col about">
         <h3>About</h3>
         <p>Innovative developer with experience in modern web technologies, backend systems, and integrations.</p>
-        <a href="/resume.pdf" className="footer-btn" download>View Resume</a>
+        <a href={mern} className="btn btn-outline" className="footer-btn" download>View Resume</a>
       </div>
       <div className="footer-col connect">
-        <h3>Connect</h3>
+        <h3>Connect</h3> 
         <ul>
           <li><a href="https://github.com/Shubham-Nirmal" target="_blank" rel="noreferrer">GitHub</a></li>
           <li><a href="https://twitter.com/" target="_blank" rel="noreferrer">Twitter</a></li>
@@ -45,7 +46,7 @@ const Footer = () => (
         <a href="https://www.linkedin.com/in/shubhamnirmal36/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
         <a href="https://twitter.com/" target="_blank" rel="noreferrer"><FaTwitter /></a>
       </div>
-      <a href="#contact" className="hire-btn">Hire Me<br />Lets Talk</a>
+      
     </div>
   </footer>
 );
