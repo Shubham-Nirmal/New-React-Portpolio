@@ -1,8 +1,48 @@
 import React, { useState } from "react";
 import portfolioLogo from "../../assets/Namelogo.png";
+import { FaBars, FaTimes, FaHome, FaUser, FaCode, FaBriefcase, FaGraduationCap, FaFolder, FaFileAlt, FaEnvelope } from "react-icons/fa";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close menu when clicking on a link
+  const handleNavClick = () => {
+    setMenuOpen(false);
+  };
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuOpen && !event.target.closest('.devfolio-navbar')) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [menuOpen]);
+
+  const navItems = [
+    { href: "#about", label: "About", icon: <FaUser /> },
+    { href: "#skills", label: "Skills", icon: <FaCode /> },
+    { href: "#work", label: "Experience", icon: <FaBriefcase /> },
+    { href: "#education", label: "Education", icon: <FaGraduationCap /> },
+    { href: "#projects", label: "Projects", icon: <FaFolder /> },
+    // { href: "#resume", label: "Resume", icon: <FaFileAlt /> },
+    { href: "#contact", label: "Contact", icon: <FaEnvelope /> },
+  ];
 
   return (
     <nav className="w-full shadow-md shadow-gray-600 fixed top-0 z-50 bg-black shadow-md font-poppins">
@@ -92,6 +132,11 @@ function Navbar() {
           ))}
         </ul>
       </div>
+
+      {/* Mobile overlay */}
+      {menuOpen && (
+        <div className="mobile-overlay" onClick={() => setMenuOpen(false)} />
+      )}
     </nav>
   );
 }
