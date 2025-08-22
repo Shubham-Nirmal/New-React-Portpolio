@@ -14,62 +14,25 @@ import {
 
 const experiences = [
   {
-    company: "Facebook",
-    role: "Software Engineer",
-    date: "June 2018 – Present",
-    location: "Menlo Park, CA",
+    company: "WorldDoor Infotech Pvt Ltd",
+    role: "Full Stack Developer Intern",
+    date: "June 2025 – Present",
+    location: "Pune Maharashtra India",
     description: [
       "Built scalable frontend systems using React and TypeScript",
-      "Integrated Facebook APIs and GraphQL for data management",
-      "Led development of new features with 10M+ daily active users",
+      "Integrated google APIs and RestAPIs for data management",
+      "Led development of new features with 10k+ daily active users",
       "Mentored junior developers and conducted code reviews",
       "Optimized application performance by 40%",
     ],
-    icon: <FaFacebookF />,
+
     color: "#1877F2",
     gradient: "linear-gradient(135deg, #1877F2 0%, #42A5F5 100%)",
     achievements: ["Performance Award", "Innovation Grant"],
-    technologies: ["React", "TypeScript", "GraphQL", "Node.js"],
-    impact: "10M+ users"
+    technologies: ["React", "JavaScript", "RestAPIs", "Node.js"],
+    impact: "10k+ users"
   },
-  {
-    company: "Quora",
-    role: "Front-End Developer",
-    date: "May 2017 – May 2018",
-    location: "Mountain View, CA",
-    description: [
-      "Redesigned user dashboard UI improving user engagement by 25%",
-      "Worked with React and Redux for state management",
-      "Implemented responsive design for mobile and desktop platforms",
-      "Collaborated with UX designers to create intuitive interfaces",
-      "Reduced page load time by 30% through optimization",
-    ],
-    icon: <FaQuora />,
-    color: "#B92B27",
-    gradient: "linear-gradient(135deg, #B92B27 0%, #E74C3C 100%)",
-    achievements: ["Best UI Award", "Team Player"],
-    technologies: ["React", "Redux", "JavaScript", "CSS3"],
-    impact: "25% engagement increase"
-  },
-  {
-    company: "Airbnb",
-    role: "Software Engineer Intern",
-    date: "Jan 2015 – Sep 2015",
-    location: "San Francisco, CA",
-    description: [
-      "Improved booking interface performance and user experience",
-      "Collaborated with design and backend teams on feature development",
-      "Implemented A/B testing for new booking flow features",
-      "Developed reusable component library for the design system",
-      "Contributed to codebase with 100+ commits and 15+ PRs",
-    ],
-    icon: <FaAirbnb />,
-    color: "#FF5A5F",
-    gradient: "linear-gradient(135deg, #FF5A5F 0%, #FF8A80 100%)",
-    achievements: ["Intern of the Year", "Innovation Award"],
-    technologies: ["JavaScript", "React", "Python", "Django"],
-    impact: "15+ features shipped"
-  },
+  
 ];
 
 const Experience = () => {
@@ -168,21 +131,21 @@ const Experience = () => {
               <div className="stat-icon">
                 <FaCode />
               </div>
-              <div className="stat-number">3</div>
+              <div className="stat-number">1</div>
               <div className="stat-label">Companies</div>
             </div>
             <div className="stat-item">
               <div className="stat-icon">
                 <FaUsers />
               </div>
-              <div className="stat-number">10M+</div>
+              <div className="stat-number">1k+</div>
               <div className="stat-label">Users Impacted</div>
             </div>
             <div className="stat-item">
               <div className="stat-icon">
                 <FaRocket />
               </div>
-              <div className="stat-number">15+</div>
+              <div className="stat-number">4+</div>
               <div className="stat-label">Features Shipped</div>
             </div>
           </div>
