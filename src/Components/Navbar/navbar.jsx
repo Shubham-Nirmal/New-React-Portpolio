@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import "./navbar.css";
+import React, { useState } from "react";
 import portfolioLogo from "../../assets/Namelogo.png";
 import { FaBars, FaTimes, FaHome, FaUser, FaCode, FaBriefcase, FaGraduationCap, FaFolder, FaFileAlt, FaEnvelope } from "react-icons/fa";
 
@@ -46,49 +45,92 @@ function Navbar() {
   ];
 
   return (
-    <nav className={`devfolio-navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="devfolio-navbar-container">
-        <div className="devfolio-logo">
-          <a href="/" onClick={handleNavClick}>
+    <nav className="w-full shadow-md shadow-gray-600 fixed top-0 z-50 bg-black shadow-md font-poppins">
+      <div className="max-w-6xl mx-auto flex items-center justify-between flex-wrap p-4 md:p-5">
+        {/* Logo */}
+        <div className="flex items-center">
+          <a href="/" className="flex items-center">
             <img
               src={portfolioLogo}
               alt="Portfolio Logo"
-              className="logo-image"
+              className="h-14 md:h-20 w-auto mr-2"
             />
+            <span className="font-bold text-xl md:text-2xl text-white">
+              Portfolio
+            </span>
           </a>
         </div>
 
-        <ul className={`devfolio-nav-links ${menuOpen ? "open" : ""}`}>
-          {navItems.map((item, index) => (
-            <li key={index} className="nav-item">
-              <a 
-                href={item.href} 
-                onClick={handleNavClick}
-                className="nav-link"
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex md:items-center md:space-x-8">
+          {[
+            ["#about", "About"],
+            ["#skills", "Skills"],
+            ["#work", "Work Experiences"],
+            ["#education", "Education"],
+            ["#", "Projects"],
+            ["#resume", "Resume"],
+            ["#contact", "Contact Me"],
+          ].map(([href, label]) => (
+            <li key={label}>
+              <a
+                href={href}
+                className="text-white hover:text-blue-400 transition-colors duration-300 font-medium"
               >
-                <span className="nav-icon">{item.icon}</span>
-                <span className="nav-text">{item.label}</span>
+                {label}
               </a>
             </li>
           ))}
         </ul>
 
-        <div className="nav-actions">
-          <button className="cta-button" onClick={() => window.location.href = "#contact"}>
-            <FaEnvelope />
-            <span>Hire Me</span>
-          </button>
-          
-          <div
-            className={`devfolio-hamburger ${menuOpen ? "open" : ""}`}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle navigation menu"
-          >
-            <span className="hamburger-line" />
-            <span className="hamburger-line" />
-            <span className="hamburger-line" />
-          </div>
+        {/* Hamburger (Mobile) */}
+        <div
+          className="flex flex-col cursor-pointer md:hidden space-y-1.5"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+              menuOpen ? "rotate-45 translate-y-2.5" : ""
+            }`}
+          />
+          <span
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+              menuOpen ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+              menuOpen ? "-rotate-45 -translate-y-2.5" : ""
+            }`}
+          />
         </div>
+
+        {/* Mobile Menu */}
+        <ul
+          className={`md:hidden w-full bg-black transition-all duration-500 ease-in-out overflow-hidden ${
+            menuOpen ? "max-h-96 py-4" : "max-h-0"
+          }`}
+        >
+          {[
+            ["#about", "About"],
+            ["#skills", "Skills"],
+            ["#work", "Work Experiences"],
+            ["#education", "Education"],
+            ["#", "Projects"],
+            ["#resume", "Resume"],
+            ["#contact", "Contact Me"],
+          ].map(([href, label]) => (
+            <li key={label} className="text-center py-2">
+              <a
+                href={href}
+                className="text-white hover:text-blue-400 transition-colors duration-300 block font-medium"
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Mobile overlay */}
@@ -100,4 +142,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
